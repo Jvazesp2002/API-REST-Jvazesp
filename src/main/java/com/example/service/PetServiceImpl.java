@@ -6,7 +6,7 @@ import java.util.Optional;
 import org.springframework.stereotype.Service;
 
 import com.example.persistence.Pet;
-import com.example.persistence.PetRepositoryI;
+import com.example.repository.PetRepositoryI;
 
 @Service
 public class PetServiceImpl implements PetServiceI {

@@ -1,6 +1,8 @@
-package com.example.persistence;
+package com.example.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.example.persistence.Pet;
 
 public interface PetRepositoryI extends JpaRepository<Pet, Long>{
 

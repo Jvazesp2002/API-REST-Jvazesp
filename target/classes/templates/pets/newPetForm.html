@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>NTT DATA CRUD</title>
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script
+            src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<body class="card-body">
+<div class="card text-white bg-dark mb-3">
+    <div class="card-header">Datos Nueva Mascota.</div>
+    <div class="card-body">
+        <form th:action="@{/newPet}" th:object="${pet}" method="POST">
+            <div class="form-group">
+                <label for="itNombre">Nombre</label>
+                <input type="text" required="required" class="form-control" id="itNombre" th:field="*{name}" placeholder="Nombre de la mascota">
+            </div>
+            <div class="form-group">
+                <label for="itType">Tipo</label>
+                <input type="text" required="required" class="form-control" id="itType" th:field="*{type}" placeholder="Tipo">
+            </div>
+            <div class="form-group">
+                <label for="itOwner">Dueño</label>
+                <select required="required" class="form-control" id="itOwner" th:field="*{owner}">
+					<option th:each="owner : ${owners}" th:value="${owner.id}" th:text="${owner.name}"></option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="itHappiness">Felicidad</label>
+                <input type="number" required="required" class="form-control" id="itHappiness" th:field="*{happiness}" placeholder="Felicidad">
+            </div>
+            <div class="form-group">
+                <label for="itHunger">Hambre</label>
+                <input type="number" required="required" class="form-control" id="itHunger" th:field="*{hunger}" placeholder="Hambre">
+            </div>
+            <button type="submit" name="btnCrearMascota" class="btn btn-success">Añadir Mascota</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>
