@@ -1,0 +1,28 @@
+<!-- newOwnerForm.html -->
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Nuevo Dueño</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body class="card-body">
+    <div class="card text-white bg-dark mb-3">
+        <div class="card-header">Datos Nuevo Dueño</div>
+        <div class="card-body">
+            <form th:action="@{/newOwner}" th:object="${owner}" method="POST">
+                <div class="form-group">
+                    <label for="itNombre">Nombre</label>
+                    <input type="text" required="required" class="form-control" id="itNombre" th:field="*{name}" placeholder="Nombre del dueño">
+                </div>
+                <div class="form-group">
+                    <label for="itEmail">Email</label>
+                    <input type="email" required="required" class="form-control" id="itEmail" th:field="*{email}" placeholder="Email del dueño">
+                </div>
+                <button type="submit" name="btnCrearDueño" class="btn btn-success">Añadir Dueño</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

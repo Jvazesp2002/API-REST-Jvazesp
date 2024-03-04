@@ -1,0 +1,19 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Inicio de Proyecto</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1>Proyecto simulador de cuidadora de animales</h1>
+
+        <a th:href="@{/viewPets}" class="btn btn-primary">Ir al listado</a>
+        <a th:href="@{/newPet}" class="btn btn-primary">Nueva mascota</a>
+        <a th:href="@{/newOwner}" class="btn btn-primary">Nuevo dueño</a>
+    </div>
+</body>
+</html>
