@@ -1,6 +1,7 @@
 package com.example.service.user;
 
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.stereotype.Service;
 
 public interface JwtService {
     String extractUserName(String token);

@@ -8,6 +8,7 @@ import java.util.function.Function;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.stereotype.Service;
 
 import com.example.service.user.JwtService;
 
@@ -17,6 +18,7 @@ import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
 
+@Service
 public class JwtServiceImpl implements JwtService {
     /**
      * #############
@@ -32,7 +34,7 @@ public class JwtServiceImpl implements JwtService {
      */
     // Llave para firmar el JWT, obtenida del archivo de propiedades de la aplicación.
 	@Value("${jwt.secret}")
-    private String jwtSigningKey;// = "413F4428472B4B6250655368566D5970337336763979244226452948404D6351";
+    private String jwtSigningKey;
 
     // Extrae el nombre de usuario (subject) del token JWT.
     // En un JWT, el 'subject' suele referirse al identificador del usuario.
@@ -99,4 +101,6 @@ public class JwtServiceImpl implements JwtService {
         byte[] keyBytes = Decoders.BASE64.decode(jwtSigningKey);
         return Keys.hmacShaKeyFor(keyBytes);
     }
+    
+
 }

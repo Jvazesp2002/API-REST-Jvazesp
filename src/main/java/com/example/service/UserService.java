@@ -3,19 +3,11 @@ package com.example.service;
 import java.util.List;
 
 import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.stereotype.Service;
 
-import com.example.persistence.User;
+import com.example.dto.response.user.UsuarioResponse;
 
 public interface UserService {
-UserDetailsService userDetailsService();
-	
-    List<User> getAllUsers();
-
-    User getUserById(Long id);
-
-    User addUser(User usuario);
-
-    User updateUser(Long id, User usuario);
-
-    void deleteUser(Long id);
+    UserDetailsService userDetailsService();
+    List<UsuarioResponse> getAllUsers();
 }

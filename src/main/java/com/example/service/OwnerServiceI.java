@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 
 import com.example.persistence.Owner;
 
-@Service
+
 public interface OwnerServiceI {
 
 	public void createOwner(Owner p);
