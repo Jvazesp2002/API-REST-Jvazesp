@@ -15,7 +15,7 @@ import com.example.dto.response.user.UsuarioResponse;
 import com.example.service.UserService;
 
 @RestController
-@RequestMapping("/api/v1/users")
+@RequestMapping("/api/v0/users")
 public class AuthorizationAdminController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(AuthorizationAdminController.class);
